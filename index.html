@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="assets/images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="app.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		/>
+		<title>Frontend Mentor | Rock, Paper, Scissors</title>
+	</head>
+	<body class="home">
+		<main class="main">
+			<div class="score-box">
+				<div class="logo">
+					<img src="assets/images/logo.svg" alt="logo" />
+				</div>
+				<div class="score">
+					<h4 class="score__title">score</h4>
+					<p class="score__result">0</p>
+				</div>
+			</div>
+
+			<div class="choices-box">
+				<button class="rock button-choices" data-choice="rock">
+					<span class="inner-circle">
+						<img
+							src="./assets/images/icon-rock.svg"
+							alt=""
+							class="svg"
+							alt="rock"
+						/>
+					</span>
+				</button>
+
+				<button class="paper button-choices" data-choice="paper">
+					<span class="inner-circle">
+						<img
+							src="./assets/images/icon-paper.svg"
+							alt=""
+							class="svg"
+							alt="paper"
+						/>
+					</span>
+				</button>
+
+				<button class="scissors button-choices" data-choice="scissors">
+					<span class="inner-circle">
+						<img
+							src="./assets/images/icon-scissors.svg"
+							alt=""
+							class="svg"
+							alt="scissors"
+						/>
+					</span>
+				</button>
+			</div>
+
+			<!-- <div class="result-box">
+				<div class="my-pick">
+					<button class="paper button-choices">
+						<span class="inner-circle">
+							<img
+								src="./assets/images/icon-paper.svg"
+								alt=""
+								class="svg"
+								alt="paper"
+							/>
+						</span>
+					</button>
+				</div>
+
+				<div class="computer-pick">
+					<button class="scissors button-choices">
+						<span class="inner-circle">
+							<img
+								src="./assets/images/icon-scissors.svg"
+								alt=""
+								class="svg"
+								alt="scissors"
+							/>
+						</span>
+					</button>
+				</div>
+			</div>
+ -->
+			<button class="rules button">Rules</button>
+		</main>
+		<footer class="footer">
+			<div class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by
+				<a href="https://francuskimiroslav.com/">Francuski Miroslav</a>.
+			</div>
+		</footer>
+
+		<script src="app.js"></script>
+	</body>
+</html>
