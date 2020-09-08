@@ -38,34 +38,41 @@
 }
 
 .button-choices {
-	width: 41.6%;
-	height: auto;
 	border-radius: 50%;
 	display: inline-block;
 	border: none;
-	transition: all 0.5s ease;
+	transition: all 0.2s ease;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: inset 0px -15px 0px -5px rgba(0, 0, 0, 0.2);
-	margin-bottom: 20px;
+	box-shadow: inset 0px -8px 0px 0px rgba(0, 0, 0, 0.2);
+	outline: none;
 
 	.inner-circle {
-		width: 80%;
-		height: 80%;
+		height: 100%;
 		border-radius: 50%;
 		background-color: #ffffff;
-		box-shadow: inset 0px 15px 0px -5px rgba(0, 0, 0, 0.2);
+		box-shadow: inset 0px 8px 0px 0px rgba(0, 0, 0, 0.2);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		transition: all 0.5s ease-in-out;
+		padding-bottom: 100%;
+		padding-left: 100%;
+		position: relative;
 	}
 
 	.svg {
 		transition: all 0.5s ease-in-out;
-		transform: scale(1.4);
+		transform: translate(-50%, -50%) scale(1.4);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+
+		@include breakpoint-max(600) {
+			transform: translate(-50%, -50%) scale(0.8);
+		}
 	}
 
 	&:hover {
@@ -80,6 +87,7 @@
 
 	&:active {
 		background-color: darken($primaryClr, 5%);
+		transform: scale(0.9);
 	}
 
 	&.rock {

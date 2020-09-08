@@ -1,6 +1,9 @@
 const choices = ['paper', 'rock', 'scissors'];
 const buttons = Array.from(document.querySelectorAll('.button-choices'));
 const scoreResult = document.querySelector('.score__result');
+const resultBox = document.getElementById('result-box');
+const choicesBox = document.getElementById('choices');
+const scoreBox = document.getElementById('score-box');
 
 let score = 0;
 
@@ -20,39 +23,103 @@ buttons.forEach((button) => {
 
 function result() {
 	const computerChoice = pickRandomChoice();
+	let resultMessage = '';
 
 	if (myChoice === 'rock' && myChoice === computerChoice) {
 		updateScore(0);
+		resultMessage = 'draw';
 		console.log('DRAW rezultat je nerešen');
 	} else if (myChoice === 'paper' && myChoice === computerChoice) {
 		updateScore(0);
+		resultMessage = 'draw';
 		console.log('DRAW rezultat je nerešen');
 	} else if (myChoice === 'scissors' && myChoice === computerChoice) {
 		updateScore(0);
+		resultMessage = 'draw';
 		console.log('DRAW rezultat je nerešen');
 	} else if (myChoice === 'rock' && computerChoice === 'paper') {
 		updateScore(-1);
+		resultMessage = 'you lose';
 		console.log('YOU LOSE paper beats rock');
 	} else if (myChoice === 'rock' && computerChoice === 'scissors') {
 		updateScore(1);
+		resultMessage = 'you win';
 		console.log('YOU WIN rock beats scissors');
 	} else if (myChoice === 'paper' && computerChoice === 'rock') {
 		updateScore(1);
+		resultMessage = 'you win';
 		console.log('YOU WIN paper beats rock');
 	} else if (myChoice === 'paper' && computerChoice === 'scissors') {
 		updateScore(-1);
+		resultMessage = 'you lose';
 		console.log('YOU LOSE scissors beat paper ');
 	} else if (myChoice === 'scissors' && computerChoice === 'rock') {
 		updateScore(-1);
+		resultMessage = 'you lose';
 		console.log('YOU LOSE rock beats scissors');
 	} else if (myChoice === 'scissors' && computerChoice === 'paper') {
 		updateScore(1);
+		resultMessage = 'you win';
 		console.log('YOU WIN scissors beat paper ');
 	}
+
+	let resultContainer = document.createElement('div');
+	resultContainer.classList.add('result-box');
+	resultContainer.innerHTML = `
+				<div class="result-box__picked my-pick">
+					<h3 class="result-box__title">You picked</h3>
+					<button class="${myChoice} button-choices">
+						<span class="inner-circle">
+							<img
+								src="./assets/images/icon-${myChoice}.svg"
+								alt=""
+								class="svg"
+								alt="paper"
+							/>
+						</span>
+					</button>
+				</div>
+
+				<div class="winner">
+					<h2 class="winner__title">
+						${resultMessage}
+					</h2>
+
+					<button class="winner__button button" id="reset">Play Again</button>
+				</div>
+
+				<div class="result-box__picked computer-pick">
+					<h3 class="result-box__title">Computer picked</h3>
+					<button class="${computerChoice} button-choices">
+						<span class="inner-circle">
+							<img
+								src="./assets/images/icon-${computerChoice}.svg"
+								alt=""
+								class="svg"
+								alt="scissors"
+							/>
+						</span>
+					</button>
+				</div>
+		`;
+
+	scoreBox.insertAdjacentElement('afterend', resultContainer);
+	choicesBox.style.display = 'none';
+
+	const resetBtn = document.getElementById('reset');
+
+	resetBtn.addEventListener('click', (e) => {
+		choicesBox.style.display = 'flex';
+		resultContainer.remove();
+	});
 }
 
 function updateScore(value) {
 	score += value;
+
+	if (score < 0) {
+		score = 0;
+	}
 
 	scoreResult.innerText = score;
 }
