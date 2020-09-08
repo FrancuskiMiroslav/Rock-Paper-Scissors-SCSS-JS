@@ -31,17 +31,6 @@
 			</div>
 
 			<div class="choices-box">
-				<button class="rock button-choices" data-choice="rock">
-					<span class="inner-circle">
-						<img
-							src="./assets/images/icon-rock.svg"
-							alt=""
-							class="svg"
-							alt="rock"
-						/>
-					</span>
-				</button>
-
 				<button class="paper button-choices" data-choice="paper">
 					<span class="inner-circle">
 						<img
@@ -60,6 +49,17 @@
 							alt=""
 							class="svg"
 							alt="scissors"
+						/>
+					</span>
+				</button>
+
+				<button class="rock button-choices" data-choice="rock">
+					<span class="inner-circle">
+						<img
+							src="./assets/images/icon-rock.svg"
+							alt=""
+							class="svg"
+							alt="rock"
 						/>
 					</span>
 				</button>
@@ -94,6 +94,21 @@
 			</div>
  -->
 			<button class="rules button">Rules</button>
+
+			<div class="modal-container" id="modal-container">
+				<div class="modal">
+					<div class="modal__heading">
+						<h2 class="modal__title">Rules</h2>
+						<button id="modal-close" class="modal__close">
+							<img src="assets/images/icon-close.svg" alt="close" />
+						</button>
+					</div>
+
+					<div class="modal__content">
+						<img src="assets/images/image-rules.svg" alt="rules" />
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="attribution">
