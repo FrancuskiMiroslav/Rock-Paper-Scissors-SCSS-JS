@@ -56,3 +56,16 @@ function updateScore(value) {
 
 	scoreResult.innerText = score;
 }
+
+////// modal popup
+const rules = document.querySelector('.rules');
+const modalContainer = document.getElementById('modal-container');
+const modalClose = document.getElementById('modal-close');
+
+rules.addEventListener('click', (e) => {
+	modalContainer.classList.add('show');
+});
+
+modalClose.addEventListener('click', (e) => {
+	modalContainer.classList.remove('show');
+});

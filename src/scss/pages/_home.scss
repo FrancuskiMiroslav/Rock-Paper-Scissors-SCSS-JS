@@ -71,4 +71,71 @@
 	.rules {
 		margin-left: auto;
 	}
+
+	.modal-container {
+		z-index: -5;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		background: rgba($color: #000000, $alpha: 0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: 1s all ease-in-out;
+
+		.modal {
+			background: #ffffff;
+			width: 30%;
+			padding: 40px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			&__heading {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 40px;
+				width: 100%;
+			}
+
+			&__title {
+				text-transform: uppercase;
+				color: $headerOutlineClr;
+			}
+
+			&__close {
+				border: none;
+				outline: none;
+				background: rgba($color: #000000, $alpha: 0);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				&:hover {
+					img {
+						background: rgba($color: #000000, $alpha: 0.5);
+						filter: brightness(25);
+					}
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+					transition: 1s all ease-in-out;
+				}
+			}
+		}
+
+		&.show {
+			opacity: 1;
+			pointer-events: auto;
+			z-index: 10;
+		}
+	}
 }
