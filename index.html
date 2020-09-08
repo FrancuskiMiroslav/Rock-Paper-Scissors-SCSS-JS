@@ -20,9 +20,9 @@
 	</head>
 	<body class="home">
 		<main class="main">
-			<div class="score-box">
+			<div class="score-box" id="score-box">
 				<div class="logo">
-					<img src="assets/images/logo.svg" alt="logo" />
+					<img src="assets/images/logo.svg" alt="logo" class="logo__img" />
 				</div>
 				<div class="score">
 					<h4 class="score__title">score</h4>
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div class="choices-box">
+			<div class="choices-box" id="choices">
 				<button class="paper button-choices" data-choice="paper">
 					<span class="inner-circle">
 						<img
@@ -65,8 +65,9 @@
 				</button>
 			</div>
 
-			<!-- <div class="result-box">
-				<div class="my-pick">
+			<!-- <div class="result-box" id="result-box">
+				<div class="result-box__picked my-pick">
+					<h3 class="result-box__title">You picked</h3>
 					<button class="paper button-choices">
 						<span class="inner-circle">
 							<img
@@ -79,7 +80,16 @@
 					</button>
 				</div>
 
-				<div class="computer-pick">
+				<div class="winner">
+					<h2 class="winner__title">
+						You <span id="winner-result">nešto</span>
+					</h2>
+
+					<button class="winner__button button" id="reset">Play Again</button>
+				</div>
+
+				<div class="result-box__picked computer-pick">
+					<h3 class="result-box__title">Computer picked</h3>
 					<button class="scissors button-choices">
 						<span class="inner-circle">
 							<img
@@ -91,8 +101,8 @@
 						</span>
 					</button>
 				</div>
-			</div>
- -->
+			</div> -->
+
 			<button class="rules button">Rules</button>
 
 			<div class="modal-container" id="modal-container">
