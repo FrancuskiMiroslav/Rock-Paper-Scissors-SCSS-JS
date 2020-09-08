@@ -39,27 +39,27 @@ function result() {
 		console.log('DRAW rezultat je nerešen');
 	} else if (myChoice === 'rock' && computerChoice === 'paper') {
 		updateScore(-1);
-		resultMessage = 'you lose';
+		resultMessage = 'lose';
 		console.log('YOU LOSE paper beats rock');
 	} else if (myChoice === 'rock' && computerChoice === 'scissors') {
 		updateScore(1);
-		resultMessage = 'you win';
+		resultMessage = 'win';
 		console.log('YOU WIN rock beats scissors');
 	} else if (myChoice === 'paper' && computerChoice === 'rock') {
 		updateScore(1);
-		resultMessage = 'you win';
+		resultMessage = 'win';
 		console.log('YOU WIN paper beats rock');
 	} else if (myChoice === 'paper' && computerChoice === 'scissors') {
 		updateScore(-1);
-		resultMessage = 'you lose';
+		resultMessage = 'lose';
 		console.log('YOU LOSE scissors beat paper ');
 	} else if (myChoice === 'scissors' && computerChoice === 'rock') {
 		updateScore(-1);
-		resultMessage = 'you lose';
+		resultMessage = 'lose';
 		console.log('YOU LOSE rock beats scissors');
 	} else if (myChoice === 'scissors' && computerChoice === 'paper') {
 		updateScore(1);
-		resultMessage = 'you win';
+		resultMessage = 'win';
 		console.log('YOU WIN scissors beat paper ');
 	}
 
@@ -68,7 +68,7 @@ function result() {
 	resultContainer.innerHTML = `
 				<div class="result-box__picked my-pick">
 					<h3 class="result-box__title">You picked</h3>
-					<button class="${myChoice} button-choices">
+					<button class="${myChoice} button-choices ${resultMessage}">
 						<span class="inner-circle">
 							<img
 								src="./assets/images/icon-${myChoice}.svg"
@@ -82,7 +82,7 @@ function result() {
 
 				<div class="winner">
 					<h2 class="winner__title">
-						${resultMessage}
+					 You <span id="winner-result">${resultMessage}</span>	
 					</h2>
 
 					<button class="winner__button button" id="reset">Play Again</button>
@@ -90,7 +90,9 @@ function result() {
 
 				<div class="result-box__picked computer-pick">
 					<h3 class="result-box__title">Computer picked</h3>
-					<button class="${computerChoice} button-choices">
+					<button class="${computerChoice} button-choices ${
+		resultMessage === 'lose' ? 'win' : ''
+	} ">
 						<span class="inner-circle">
 							<img
 								src="./assets/images/icon-${computerChoice}.svg"
